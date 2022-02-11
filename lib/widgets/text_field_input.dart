@@ -1,0 +1,35 @@
+import 'package:flutter/material.dart';
+
+class TextFieldInput extends StatelessWidget {
+  final TextEditingController controller;
+  final String hint;
+  final TextInputType keyboardType;
+  final bool isPassword;
+
+  const TextFieldInput({
+    Key? key,
+    required this.controller,
+    required this.hint,
+    required this.keyboardType,
+    this.isPassword = false,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final inputBorder =
+        OutlineInputBorder(borderSide: Divider.createBorderSide(context));
+    return TextField(
+      controller: controller,
+      decoration: InputDecoration(
+        hintText: hint,
+        border: inputBorder,
+        focusedBorder: inputBorder,
+        enabledBorder: inputBorder,
+        filled: true,
+        contentPadding: const EdgeInsets.all(8),
+      ),
+      keyboardType: keyboardType,
+      obscureText: isPassword,
+    );
+  }
+}
