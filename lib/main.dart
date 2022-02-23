@@ -25,9 +25,6 @@ void main() async {
 
   await FirebaseAppCheck.instance.activate();
   String? token = await FirebaseAppCheck.instance.getToken();
-  print('1111111111111111111111111');
-  print(token);
-  print('1111111111111111111111111');
 
   runApp(const MyApp());
 }
